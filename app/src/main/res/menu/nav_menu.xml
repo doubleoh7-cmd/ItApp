@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:title="Home"
+            android:icon="@drawable/ic_round_home_24"/>
+
+        <item
+            android:id="@+id/nav_Faculty"
+            android:title="Faculty/Staff Directory"
+            android:icon="@drawable/ic_round_person_24"/>
+
+        <item
+            android:id="@+id/nav_Courses"
+            android:title="Courses"
+            android:icon="@drawable/ic_round_library_books_24"/>
+
+        <item
+            android:id="@+id/nav_Timetable"
+            android:title="Timetable"
+            android:icon="@drawable/ic_round_table_view_24"/>
+
+        <item
+            android:id="@+id/nav_Admissions"
+            android:title="Admissions"
+            android:icon="@drawable/ic_round_supervised_user_circle_24"/>
+
+        <item
+            android:id="@+id/nav_SocialMedia"
+            android:title="Social Media"
+            android:icon="@drawable/ic_round_laptop_chromebook_24"/>
+    </group>
+
+    <item android:title="Profile">
+
+        <menu>
+
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/nav_Logout"
+                    android:title="Logout"
+                    android:icon="@drawable/ic_round_logout_24"/>
+
+            </group>
+
+        </menu>
+
+    </item>
+
+    <item android:title="Communicate">
+
+        <menu>
+
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/nav_share"
+                    android:title="Share"
+                    android:icon="@drawable/ic_round_share_24"/>
+
+                <item
+                    android:id="@+id/nav_rate_us"
+                    android:title="Rate Us"
+                    android:icon="@drawable/ic_round_rate_review_24"/>
+            </group>
+
+        </menu>
+
+    </item>
+
+</menu>
