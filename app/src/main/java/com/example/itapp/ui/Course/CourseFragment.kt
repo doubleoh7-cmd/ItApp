@@ -25,61 +25,12 @@ class CourseFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        populateCourse()
-
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
     }
 
-    private fun populateCourse() {
-
-        val course1 = Course(
-            R.drawable.cover, "ITT101",
-            "Python",
-            "3",
-            "None",
-            "Basic python coding for IT first year student's"
-        )
-        courseList.add(course1)
-
-        val course2 = Course(
-            R.drawable.cover, "ITT101",
-            "Python",
-            "3",
-            "None",
-            "Basic python coding for IT first year student's"
-        )
-        courseList.add(course2)
-
-        val course3 = Course(
-            R.drawable.cover, "ITT101",
-            "Python",
-            "3",
-            "None",
-            "Basic python coding for IT first year student's"
-        )
-        courseList.add(course3)
-
-        val course4 = Course(
-            R.drawable.cover, "ITT101",
-            "Python",
-            "3",
-            "None",
-            "Basic python coding for IT first year student's"
-        )
-        courseList.add(course4)
-
-        val course5 = Course(
-            R.drawable.cover, "ITT101",
-            "Python",
-            "3",
-            "None",
-            "Basic python coding for IT first year student's"
-        )
-        courseList.add(course5)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

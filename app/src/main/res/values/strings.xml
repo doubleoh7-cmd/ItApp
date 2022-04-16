@@ -16,4 +16,5 @@
     <string name="emaill">"@ucc.stu.edu.jm"</string>
     <string name="sendEmail">SendEmail</string>
     <string name="error_password">Password must contain at least 8 characters.</string>
+    <string name="title_activity_login">LoginActivity</string>
 </resources>
