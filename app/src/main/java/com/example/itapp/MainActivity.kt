@@ -8,7 +8,6 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
-import com.example.itapp.ui.Admission.AdmissionFragment
 import com.example.itapp.ui.Course.CourseFragment
 import com.example.itapp.ui.Faculty_StaffDirectory.FacultyFragment
 import com.example.itapp.ui.RateUs.RateUsFragment
@@ -27,10 +26,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        /*if (savedInstanceState == null) {
-            startActivity(LoginActivity())
-        }*/
-
         drawerLayout = findViewById(R.id.drawerLayout)
         val navView : NavigationView = findViewById(R.id.nav_View)
 
@@ -46,7 +41,7 @@ class MainActivity : AppCompatActivity() {
             when(it.itemId){
                 //R.id.nav_home ->
                 R.id.nav_Faculty -> replaceFragment(FacultyFragment(), it.title.toString())
-                R.id.nav_Admissions -> replaceFragment(AdmissionFragment(), it.title.toString())
+                //R.id.nav_Admissions -> replaceFragment(AdmissionFragment(), it.title.toString())
                 R.id.nav_Courses -> replaceFragment(CourseFragment(), it.title.toString())
                 R.id.nav_Timetable -> replaceFragment(TimeTableFragment(), it.title.toString())
                 R.id.nav_SocialMedia -> replaceFragment(SocialMediaFragment(), it.title.toString())
