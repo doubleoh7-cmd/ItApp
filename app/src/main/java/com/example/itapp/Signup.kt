@@ -1,25 +1,16 @@
 package com.example.itapp
 
 import android.content.Intent
-import android.os.Binder
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import android.widget.EditText
 import android.widget.Toast
-import androidx.core.widget.doOnTextChanged
+import androidx.appcompat.app.AppCompatActivity
 import com.example.itapp.databinding.ActivitySignupBinding
-import com.example.itapp.ui.login.LoginViewModel
-import com.example.itapp.ui.login.afterTextChanged
-import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 
 class Signup : AppCompatActivity() {
 
     private lateinit var binding:ActivitySignupBinding
     private lateinit var firebaseAuth: FirebaseAuth
-    private lateinit var loginViewModel: LoginViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

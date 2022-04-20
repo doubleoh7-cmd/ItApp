@@ -40,8 +40,7 @@ class Signin : AppCompatActivity() {
             } else{
                 Toast.makeText(this, "Empty Fields are not allowed", Toast.LENGTH_SHORT).show()
             }
-        }
-    }
+        }    }
     //check if user already sign in
     override fun onStart() {
         super.onStart()

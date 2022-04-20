@@ -13,9 +13,7 @@ import com.example.itapp.ui.Faculty_StaffDirectory.FacultyFragment
 import com.example.itapp.ui.RateUs.RateUsFragment
 import com.example.itapp.ui.Socialmedia.SocialMediaFragment
 import com.example.itapp.ui.Timetable.TimeTableFragment
-import com.example.itapp.ui.login.LoginActivity
 import com.google.android.material.navigation.NavigationView
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
