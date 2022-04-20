@@ -17,9 +17,9 @@ class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel()
     private val _loginResult = MutableLiveData<LoginResult>()
     val loginResult: LiveData<LoginResult> = _loginResult
 
-    fun login(username: String, password: String) {
+    fun login(checkEmail: String, password: String) {
         // can be launched in a separate asynchronous job
-        val result = loginRepository.login(username, password)
+        val result = loginRepository.login(checkEmail, password)
 
         if (result is Result.Success) {
             _loginResult.value =
@@ -29,8 +29,8 @@ class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel()
         }
     }
 
-    fun loginDataChanged(username: String, password: String) {
-        if (!isUserNameValid(username)) {
+    fun loginDataChanged(checkEmail: String, password: String) {
+        if (!isUserNameValid(checkEmail)) {
             _loginForm.value = LoginFormState(usernameError = R.string.invalid_username)
         } else if (!isPasswordValid(password)) {
             _loginForm.value = LoginFormState(passwordError = R.string.invalid_password)
@@ -40,11 +40,11 @@ class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel()
     }
 
     // A placeholder username validation check
-    private fun isUserNameValid(username: String): Boolean {
-        return if (username.contains('@')) {
-            Patterns.EMAIL_ADDRESS.matcher(username).matches()
+    private fun isUserNameValid(checkEmail: String): Boolean {
+        return if (checkEmail.contains('@')) {
+            Patterns.EMAIL_ADDRESS.matcher(checkEmail).matches()
         } else {
-            username.isNotBlank()
+            checkEmail.isNotBlank()
         }
     }
 

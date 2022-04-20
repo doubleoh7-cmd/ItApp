@@ -17,4 +17,13 @@
     <string name="sendEmail">SendEmail</string>
     <string name="error_password">Password must contain at least 8 characters.</string>
     <string name="title_activity_login">LoginActivity</string>
+    <string name="type_your_email">Type your Email</string>
+    <string name="type_your_password">Type Your Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="not_registered_yet_sign_up">Not Registered Yet , Sign Up !</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="re_password">Re-Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_registered_sign_in">Already Registered , Sign In !</string>
 </resources>

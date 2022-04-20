@@ -15,6 +15,9 @@ import com.example.itapp.ui.Socialmedia.SocialMediaFragment
 import com.example.itapp.ui.Timetable.TimeTableFragment
 import com.example.itapp.ui.login.LoginActivity
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
 
@@ -46,14 +49,14 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_Timetable -> replaceFragment(TimeTableFragment(), it.title.toString())
                 R.id.nav_SocialMedia -> replaceFragment(SocialMediaFragment(), it.title.toString())
                 R.id.nav_rate_us -> replaceFragment(RateUsFragment(), it.title.toString())
-                R.id.nav_Logout -> startActivity(LoginActivity())
+                R.id.nav_Logout -> startActivity(Signin())
             }
             true
         }
     }
 
     private fun startActivity(activity: AppCompatActivity){
-        finish()
+        Firebase.auth.signOut()
         val intent = Intent(this, activity::class.java)
         startActivity(intent)
     }
