@@ -42,11 +42,11 @@ class Signin : AppCompatActivity() {
             }
         }    }
     //check if user already sign in
-    /*override fun onStart() {
+    override fun onStart() {
         super.onStart()
         if (firebaseAuth.currentUser != null){
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-    }*/
+    }
 }

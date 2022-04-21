@@ -30,6 +30,7 @@ class CourseFragment : Fragment() {
 
         binding.recyclerView.layoutManager = LinearLayoutManager(activity)
         courseArrayList = arrayListOf<course>()
+        binding.recyclerView.setHasFixedSize(true)
 
         getCourseData()
 

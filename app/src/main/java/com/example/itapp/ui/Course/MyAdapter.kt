@@ -18,9 +18,8 @@ class MyAdapter(private val courseList: ArrayList<course>) : RecyclerView.Adapte
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = courseList[position]
-
-        holder.courseName.text = currentItem.name
-        holder.courseCode.text = currentItem.code
+        holder.courseName.text = currentItem.Name
+        holder.courseCode.text = currentItem.Code
     }
 
     override fun getItemCount(): Int {
