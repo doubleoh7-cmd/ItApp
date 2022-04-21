@@ -21,14 +21,9 @@ class MyAdapter(private val courseList: ArrayList<course>) : RecyclerView.Adapte
         val currentItem = courseList[position]
         holder.courseName.text = currentItem.Name
         holder.courseCode.text = currentItem.Code
-
-        holder.itemView.setOnClickListener { object :View.OnClickListener{
-            override fun onClick(v: View?) {
-                val activity =v!!.context as AppCompatActivity
-                activity.supportFragmentManager.beginTransaction().replace(R.id.frameLayout,DetailFragment()).addToBackStack(null).commit()
-            }
-
-        } }
+        holder.courseCredits.text = currentItem.Credits.toString()
+        holder.coursePre.text = currentItem.PreRequisites
+        holder.courseDescription.text = currentItem.Description
     }
 
     override fun getItemCount(): Int {
@@ -39,6 +34,8 @@ class MyAdapter(private val courseList: ArrayList<course>) : RecyclerView.Adapte
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val courseName: TextView = itemView.findViewById(R.id.courseTitle)
         val courseCode: TextView = itemView.findViewById(R.id.courseCode)
-
+        val courseCredits: TextView = itemView.findViewById(R.id.detail_credits)
+        val coursePre: TextView = itemView.findViewById(R.id.detail_Pre_Requisites)
+        val courseDescription: TextView = itemView.findViewById(R.id.detail_Description)
     }
 }
