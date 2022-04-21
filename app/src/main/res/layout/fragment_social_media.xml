@@ -10,6 +10,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <LinearLayout
+                android:id="@+id/ucc_facebook"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
@@ -25,10 +26,12 @@
                     android:layout_height="wrap_content"
                     android:text="UCC FaceBook Page"
                     android:textSize="20sp"
+                    android:layout_gravity="center"
                     android:textColor="@color/black"/>
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ucc_instagram"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
@@ -38,9 +41,18 @@
                     android:layout_width="150dp"
                     android:src="@drawable/instagram_ucc"
                     android:contentDescription="ucc instagram"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="UCC Instagram Page"
+                    android:textSize="20sp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"/>
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ucc_twitter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
@@ -50,6 +62,14 @@
                     android:layout_width="150dp"
                     android:src="@drawable/twitter_ucc"
                     android:contentDescription="ucc twitter"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="UCC Twitter Page"
+                    android:textSize="20sp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"/>
             </LinearLayout>
         </LinearLayout>
 </FrameLayout>
