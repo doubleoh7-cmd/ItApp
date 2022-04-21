@@ -28,4 +28,12 @@
     <string name="already_registered_sign_in">Already Registered , Sign In !</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string-array name="faculty">
+        <item>ROSE, Natalie</item>
+        <item>DAVIDSON, Sonia</item>
+        <item>AMONDE, Tom</item>
+        <item>MILLER, Ionie</item>
+        <item>NDAJAH, Peter</item>
+    </string-array>
 </resources>

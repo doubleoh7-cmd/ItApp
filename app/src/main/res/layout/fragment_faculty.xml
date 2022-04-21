@@ -5,9 +5,206 @@
     android:layout_height="match_parent"
     tools:context=".ui.Faculty_StaffDirectory.FacultyFragment">
 
-   <androidx.recyclerview.widget.RecyclerView
-       android:id="@+id/lvFaculty"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/rose" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="Name: Natalie Rose"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/rose_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Tel: 876-000-0000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/rose_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Email: ithod@ucc.edu.jm"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/ucccolor"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/davidson" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="Name: Sonia Davidson"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/sonia_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tel: 876-000-0001"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/davidson_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Email: businessadminhod@ucc.edu.jm"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/ucccolor"/>
+            </LinearLayout>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_margin="5dp"
+               android:orientation="vertical">
+
+              <ImageView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:src="@drawable/amonde" />
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="10dp"
+                  android:text="Name: Tom Amonde"
+                  android:textSize="20sp"
+                  android:textStyle="bold" />
+
+              <TextView
+                  android:id="@+id/tom_num"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Tel: 876-000-0002"
+                  android:textSize="20sp"
+                  android:textStyle="bold" />
+
+              <TextView
+                  android:id="@+id/tom_email"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Email: graduatestudiesdirector@ucc.edu.jm"
+                  android:textSize="20sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/ucccolor"/>
+           </LinearLayout>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_margin="5dp"
+               android:orientation="vertical">
+
+              <ImageView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:src="@drawable/miller" />
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="10dp"
+                  android:text="Name: Ionie Miller"
+                  android:textSize="20sp"
+                  android:textStyle="bold" />
+
+              <TextView
+                  android:id="@+id/miller_num"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Tel: 876-000-0003"
+                  android:textSize="20sp"
+                  android:textStyle="bold" />
+
+              <TextView
+                  android:id="@+id/miller_email"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Email: appliedpsychologyfaculty@ucc.edu.jm"
+                  android:textSize="20sp"
+                  android:textStyle="bold"
+                  android:textColor="@color/ucccolor"/>
+           </LinearLayout>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_margin="5dp"
+               android:orientation="vertical">
+
+              <ImageView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:src="@drawable/ndajah" />
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="10dp"
+                  android:text="Name: Peter Ndajah"
+                  android:textSize="20sp"
+                  android:textStyle="bold" />
+
+              <TextView
+                  android:id="@+id/peter_num"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Tel: 876-000-0004"
+                  android:textSize="20sp"
+                  android:textStyle="bold" />
+
+              <TextView
+                  android:id="@+id/peter_email"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Email: headofschoolsmathit@ucc.edu.jm"
+                  android:textSize="20sp"
+                  android:textStyle="bold"
+                  android:contextClickable="true"
+                  android:textColor="@color/ucccolor"/>
+           </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </FrameLayout>
