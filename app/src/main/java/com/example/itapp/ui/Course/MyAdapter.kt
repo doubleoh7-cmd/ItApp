@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.itapp.R
 
@@ -20,6 +21,14 @@ class MyAdapter(private val courseList: ArrayList<course>) : RecyclerView.Adapte
         val currentItem = courseList[position]
         holder.courseName.text = currentItem.Name
         holder.courseCode.text = currentItem.Code
+
+        holder.itemView.setOnClickListener { object :View.OnClickListener{
+            override fun onClick(v: View?) {
+                val activity =v!!.context as AppCompatActivity
+                activity.supportFragmentManager.beginTransaction().replace(R.id.frameLayout,DetailFragment()).addToBackStack(null).commit()
+            }
+
+        } }
     }
 
     override fun getItemCount(): Int {
