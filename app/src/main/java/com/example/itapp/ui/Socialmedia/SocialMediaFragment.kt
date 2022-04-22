@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import com.example.itapp.R
 import com.example.itapp.databinding.FragmentSocialMediaBinding
 
-
 class SocialMediaFragment : Fragment() {
 
     private var _binding: FragmentSocialMediaBinding? = null

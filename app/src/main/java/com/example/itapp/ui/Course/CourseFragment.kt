@@ -42,6 +42,8 @@ class CourseFragment : Fragment() {
         dbref.addValueEventListener(object : ValueEventListener{
 
             override fun onDataChange(snapshot: DataSnapshot) {
+                binding.progressBar.visibility = View.GONE
+
                 if(snapshot.exists()){
                     for (courseSnapshot in snapshot.children){
                         val course = courseSnapshot.getValue(course::class.java)

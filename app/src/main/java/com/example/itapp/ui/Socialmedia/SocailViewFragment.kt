@@ -17,7 +17,6 @@ import com.example.itapp.R
 import com.example.itapp.databinding.FragmentSocailViewBinding
 import com.example.itapp.databinding.FragmentSocialMediaBinding
 
-
 class SocailViewFragment : Fragment() {
 
     private var _binding: FragmentSocailViewBinding? = null

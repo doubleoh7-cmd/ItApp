@@ -44,6 +44,7 @@ class TimeTableFragment : Fragment() {
         dbref.addValueEventListener(object : ValueEventListener {
 
             override fun onDataChange(snapshot: DataSnapshot) {
+                binding.progressBar.visibility = View.GONE
                 if (snapshot.exists()) {
                     for (timetableSnapshot in snapshot.children) {
                         val timetable = timetableSnapshot.getValue(timetable::class.java)
