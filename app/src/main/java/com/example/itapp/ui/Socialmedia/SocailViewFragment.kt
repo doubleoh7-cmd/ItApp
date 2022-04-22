@@ -1,11 +1,18 @@
 package com.example.itapp.ui.Socialmedia
 
+import android.app.Activity
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebResourceError
+import android.webkit.WebResourceRequest
+import android.webkit.WebView
 import android.webkit.WebViewClient
+import android.widget.Toast
+import androidx.annotation.RequiresApi
 import com.example.itapp.R
 import com.example.itapp.databinding.FragmentSocailViewBinding
 import com.example.itapp.databinding.FragmentSocialMediaBinding
@@ -22,13 +29,35 @@ class SocailViewFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentSocailViewBinding.inflate(inflater, container, false)
-        val fb = "https:www.facebook.com/uccjamaica/"
-        val insta = "https:www.instagram.com/uccjamaica/"
-        val twitter = "https:www.twitter.com/ucctwitter/"
+        val args = this.arguments
+        val inputLink = args?.get("link").toString()
 
         binding.wvSocial.settings.javaScriptEnabled = true
-        binding.wvSocial.webViewClient
-        binding.wvSocial.loadUrl(fb)
+        binding.wvSocial.webViewClient = CustomWebViewClient(Activity())
+        binding.wvSocial.loadUrl(inputLink)
         return binding.root
+    }
+}
+class CustomWebViewClient internal constructor(private val activity: Activity) :
+    WebViewClient() {
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+    override fun shouldOverrideUrlLoading(
+        view: WebView?,
+        request: WebResourceRequest?
+    ): Boolean {
+        val url: String = request?.url.toString();
+        view?.loadUrl(url)
+        return true
+    }
+    override fun shouldOverrideUrlLoading(webView: WebView, url: String): Boolean {
+        webView.loadUrl(url)
+        return true
+    }
+    override fun onReceivedError(
+        view: WebView,
+        request: WebResourceRequest,
+        error: WebResourceError
+    ) {
+        Toast.makeText(activity, "Error! $error", Toast.LENGTH_SHORT).show()
     }
 }
