@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ucccolor"
+    tools:context=".ui.Admissions.AdmissionFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/logo_ucc_white"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="INFORMATION TECHNOLOGY"
+                android:gravity="center"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="PROGRAMME DESCRIPTION"
+                android:gravity="center"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/programe"
+                android:textSize="19sp"
+                android:layout_margin="10dp"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="ENTRY REQUIREMENTS-JAMAICANS"
+                android:textSize="19sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:textColor="@color/light_yellow"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/entry"
+                android:textSize="19sp"
+                android:layout_margin="10dp"
+                android:textColor="@color/light_yellow"/>
+
+            <Button
+                android:id="@+id/applyBtn"
+                android:layout_width="220dp"
+                android:layout_height="60dp"
+                android:text="Apply Here"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="@color/light_yellow"
+                android:textColor="#2e3484"
+                android:textSize="19sp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

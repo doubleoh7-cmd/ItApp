@@ -36,4 +36,12 @@
         <item>MILLER, Ionie</item>
         <item>NDAJAH, Peter</item>
     </string-array>
-</resources>
+
+    <string name="programe">The Bachelor Degree in Information Technology includes a rounded academic curriculum complemented by practical work. Skills are taught in a context that makes them transferable to the job environment and students demonstrate their readiness by completing projects that solve real world problems. The content and focus of the programme are constantly informed by current practice in the field through a participatory approach that includes input from our students, faculty, and advisory board. The curriculum reflects what is pertinent in the information technology industry and is a rigorous course that balances professional competencies and academic abilities.</string>
+
+    <string name="entry">To be unconditionally admitted to complete UCC undergraduate programmes, individuals should possess a minimum of five (5) subjects at the GCE or CSEC level (including the mandatory English Language and Mathematics) at grades A, B, C or 1, 2, 3 respectively. A CSEC pass at level 3 must have been obtained since 1998.
+Candidates who have a minimum of 4 CXCs can also apply pending the outstanding CXC subjects or can opt to do UCC replacement courses Core Mathematics, English for Academic Purpose and Fundamentals of Accounting.
+Candidates can opt to apply under the Mature Entry option. To be accepted, applicants must be working for 5 years or more and be at a minimum age of 25 years. Academic qualifications, a detailed resume, a job letter and 3 professional references will be required.</string>
+
+
+    </resources>
