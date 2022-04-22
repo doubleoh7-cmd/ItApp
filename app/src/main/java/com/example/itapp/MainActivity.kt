@@ -1,6 +1,7 @@
 package com.example.itapp
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
@@ -14,6 +15,7 @@ import com.example.itapp.ui.Faculty_StaffDirectory.FacultyFragment
 import com.example.itapp.ui.RateUs.RateUsFragment
 import com.example.itapp.ui.Socialmedia.SocialMediaFragment
 import com.example.itapp.ui.Timetable.TimeTableFragment
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -27,6 +29,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val fab : FloatingActionButton = findViewById(R.id.fab)
 
         drawerLayout = findViewById(R.id.drawerLayout)
         val navView : NavigationView = findViewById(R.id.nav_View)
@@ -51,6 +55,11 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_Logout -> startActivity(Signin())
             }
             true
+        }
+
+        fab.setOnClickListener {
+            val intent = Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", "ithod@ucc.edu.jm", null))
+            startActivity(intent)
         }
     }
 

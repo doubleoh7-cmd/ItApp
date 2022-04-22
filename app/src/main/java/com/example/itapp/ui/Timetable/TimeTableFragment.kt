@@ -5,56 +5,58 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.itapp.R
+import com.example.itapp.databinding.FragmentCourseBinding
+import com.example.itapp.databinding.FragmentTimeTableBinding
+import com.example.itapp.ui.Course.MyAdapter
+import com.example.itapp.ui.Course.course
+import com.google.firebase.database.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [TimeTableFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class TimeTableFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private var _binding: FragmentTimeTableBinding? = null
+    private val binding get() = _binding!!
+
+    private lateinit var dbref: DatabaseReference
+    private lateinit var timeArrayList: ArrayList<timetable>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_time_table, container, false)
+        _binding = FragmentTimeTableBinding.inflate(inflater, container, false)
+
+        binding.recyclerView.layoutManager = LinearLayoutManager(activity)
+        timeArrayList = arrayListOf<timetable>()
+        binding.recyclerView.setHasFixedSize(true)
+
+        getTimeTable()
+
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment TimeTableFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            TimeTableFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    private fun getTimeTable() {
+        dbref = FirebaseDatabase.getInstance().getReference("Course")
+        dbref.addValueEventListener(object : ValueEventListener {
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()) {
+                    for (timetableSnapshot in snapshot.children) {
+                        val timetable = timetableSnapshot.getValue(timetable::class.java)
+                        timeArrayList.add(timetable!!)
+                    }
+                    binding.recyclerView.adapter = MyAdapterTime(timeArrayList)
                 }
             }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
     }
 }
