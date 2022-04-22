@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         navView.setNavigationItemSelectedListener {
             it.isChecked = true
             when(it.itemId){
-                //R.id.nav_home ->
+                //R.id.nav_home -> startActivity(MainActivity())
                 R.id.nav_Faculty -> replaceFragment(FacultyFragment(), it.title.toString())
                 R.id.nav_Admissions -> replaceFragment(AdmissionFragment(), it.title.toString())
                 R.id.nav_Courses -> replaceFragment(CourseFragment(), it.title.toString())
