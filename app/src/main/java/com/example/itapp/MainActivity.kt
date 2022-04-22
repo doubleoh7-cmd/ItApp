@@ -3,6 +3,7 @@ package com.example.itapp
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.os.UserHandle
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -19,7 +20,13 @@ import com.example.itapp.ui.Timetable.TimeTableFragment
 import com.example.itapp.ui.home.HomeFragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.firestore.auth.User
 import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
@@ -27,7 +34,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var toggle: ActionBarDrawerToggle
     private lateinit var drawerLayout: DrawerLayout
     private var backPressedTime = 0L
-
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -68,6 +74,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", "ithod@ucc.edu.jm", null))
             startActivity(intent)
         }
+
     }
 
     private fun startActivity(activity: AppCompatActivity){
