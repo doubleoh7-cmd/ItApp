@@ -9,12 +9,14 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import com.example.itapp.databinding.ActivityMainBinding
 import com.example.itapp.ui.Admissions.AdmissionFragment
 import com.example.itapp.ui.Course.CourseFragment
 import com.example.itapp.ui.Faculty_StaffDirectory.FacultyFragment
 import com.example.itapp.ui.RateUs.RateUsFragment
 import com.example.itapp.ui.Socialmedia.SocialMediaFragment
 import com.example.itapp.ui.Timetable.TimeTableFragment
+import com.example.itapp.ui.home.HomeFragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.ktx.auth
@@ -26,9 +28,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout
     private var backPressedTime = 0L
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val fab : FloatingActionButton = findViewById(R.id.fab)
 
@@ -41,11 +47,12 @@ class MainActivity : AppCompatActivity() {
         toggle.syncState()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        replaceFragment(HomeFragment(), "Home")
 
         navView.setNavigationItemSelectedListener {
             it.isChecked = true
             when(it.itemId){
-                //R.id.nav_home -> startActivity(MainActivity())
+                R.id.nav_home -> replaceFragment(HomeFragment(), it.title.toString())
                 R.id.nav_Faculty -> replaceFragment(FacultyFragment(), it.title.toString())
                 R.id.nav_Admissions -> replaceFragment(AdmissionFragment(), it.title.toString())
                 R.id.nav_Courses -> replaceFragment(CourseFragment(), it.title.toString())
