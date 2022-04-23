@@ -9,7 +9,7 @@ import com.google.firebase.auth.FirebaseAuth
 
 class Signup : AppCompatActivity() {
 
-    private lateinit var binding:ActivitySignupBinding
+    private lateinit var binding: ActivitySignupBinding
     private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,19 +28,22 @@ class Signup : AppCompatActivity() {
 
             val email = binding.emailEt.text.toString()
             val password = binding.passET.text.toString()
-            val confrimPassword = binding.confirmPassEt.text.toString()
+            val confirmPassword = binding.confirmPassEt.text.toString()
 
-            if (email.isNotEmpty() && password.isNotEmpty() && confrimPassword.isNotEmpty()){
-                if (password == confrimPassword){
-                    firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
-                        if (it.isSuccessful){
-                            val intent = Intent(this, Signin::class.java)
-                            startActivity(intent)
-                        } else {
-                            Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
+            if (email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()) {
+                if (password == confirmPassword) {
+                    firebaseAuth.createUserWithEmailAndPassword(email, password)
+                        .addOnCompleteListener {
+                            if (it.isSuccessful) {
+                                finish()
+                                val intent = Intent(this, Signin::class.java)
+                                startActivity(intent)
+                            } else {
+                                Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT)
+                                    .show()
+                            }
                         }
-                    }
-                } else{
+                } else {
                     binding.confirmPasswordLayout.error = "Password don't Match"
                 }
             } else {

@@ -9,7 +9,7 @@ import com.google.firebase.auth.FirebaseAuth
 
 class Signin : AppCompatActivity() {
 
-    private  lateinit var binding: ActivitySigninBinding
+    private lateinit var binding: ActivitySigninBinding
     private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,23 +28,26 @@ class Signin : AppCompatActivity() {
             val email = binding.emailEt.text.toString()
             val password = binding.passET.text.toString()
 
-            if (email.isNotEmpty() && password.isNotEmpty()){
+            if (email.isNotEmpty() && password.isNotEmpty()) {
                 firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
-                    if (it.isSuccessful){
+                    if (it.isSuccessful) {
+                        finish()
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
-                    } else{
+                    } else {
                         Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
                     }
                 }
-            } else{
+            } else {
                 Toast.makeText(this, "Empty Fields are not allowed", Toast.LENGTH_SHORT).show()
             }
-        }    }
+        }
+    }
+
     //check if user already sign in
     override fun onStart() {
         super.onStart()
-        if (firebaseAuth.currentUser != null){
+        if (firebaseAuth.currentUser != null) {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
